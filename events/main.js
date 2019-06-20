@@ -1,31 +1,46 @@
-var winplayer = document.getElementById("win-player");
-if (1<9);
-document.write("you win: "+ "sera esto?");
-
-var loseplayer = document.getElementById("lose-player");
-if (1<9);
-document.write("you lose: "+ "ESTO?");
-
-var guessesLeft = document.getElementById("guesses-left");
-GuessesLeft = 4;
-if (1<9);
-document.write("Guesses Left: "+ "???");
-
-
-var textselect = document.getElementById("text-select");
+var wins = 0;
+var losses = 0;
+var guessesLeft = 9;
+var guessFar = [];
+var computerGuess = "";
+var userGuess= "";
 
 
 
+var winsText = document.getElementById("wins");
+winsText.textContent = wins;
+
+var lossesText = document.getElementById("losses");
+lossesText.textContent = losses;
+
+var guessesText = document.getElementById("guessesLeft");
+guessesText.textContent = guessesLeft;
+
+var farText = document.getElementById("guessFar");
+farText.textContent = guessFar;
+
+
+var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+console.log(computerGuess)
+
+document.onkeyup = function(event) {
+
+    // Determines which key was pressed. // lo guarda en el console.log(userGuess)
+    userGuess = event.key;
+    console.log(userGuess)
 
 
 
-
+}
 
       // for var i=0; i => lenght.keyPlayer; i ++);
     
 
-      document.onkeyup = function(event) {
-        textselect.textContent = event.key;
-      };
+    //   document.onkeyup = function(event) {
+    //     textselect.textContent = event.key;
+    //   };
 
      
