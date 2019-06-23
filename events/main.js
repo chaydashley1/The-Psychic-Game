@@ -5,8 +5,14 @@ var guessFar = [];
 var computerGuess = "";
 var userGuess= "";
 
+function reset(){
+guessesLeft = 9;
+guessFar = [];
+}
+// Cuando poner refresh resetea 
+function refresh(){
 
-
+// Pone resultados en pantalla
 var winsText = document.getElementById("wins");
 winsText.textContent = wins;
 
@@ -18,7 +24,9 @@ guessesText.textContent = guessesLeft;
 
 var farText = document.getElementById("guessFar");
 farText.textContent = guessFar;
+}
 
+refresh();
 
 var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
@@ -27,20 +35,21 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 console.log(computerGuess)
 
 document.onkeyup = function(event) {
-
     // Determines which key was pressed. // lo guarda en el console.log(userGuess)
     userGuess = event.key;
     console.log(userGuess)
 
-
+ if (userGuess === computerGuess) {
+  wins++;
+ alert("something");
+ reset();
+ refresh();
+ computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+ console.log(computerGuess)
+ } else {
+  guessesLeft--;
+  guessFar.push(userGuess);
+  refresh();
+ }
 
 }
-
-      // for var i=0; i => lenght.keyPlayer; i ++);
-    
-
-    //   document.onkeyup = function(event) {
-    //     textselect.textContent = event.key;
-    //   };
-
-     
