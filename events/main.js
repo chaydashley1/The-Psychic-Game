@@ -9,6 +9,11 @@ function reset(){
 guessesLeft = 9;
 guessFar = [];
 }
+function startGame(){
+  document.querySelector("#guessFar").innerHTML = "";
+reset();
+}
+
 // Cuando poner refresh resetea 
 function refresh(){
 
@@ -41,9 +46,10 @@ document.onkeyup = function(event) {
 
  if (userGuess === computerGuess) {
   wins++;
- alert("something");
+ alert("YOU WIN");
  reset();
  refresh();
+//  genera otro numero una vez ganas
  computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
  console.log(computerGuess)
  } else {
