@@ -9,6 +9,7 @@ function reset(){
 guessesLeft = 9;
 guessFar = [];
 }
+
 function startGame(){
   document.querySelector("#guessFar").innerHTML = "";
 reset();
@@ -55,7 +56,10 @@ document.onkeyup = function(event) {
  } else {
   guessesLeft--;
   guessFar.push(userGuess);
-  refresh();
+  if (guessesLeft === 0) {
+    reset();
+ 
+  }
  }
-
+ refresh();
 }
