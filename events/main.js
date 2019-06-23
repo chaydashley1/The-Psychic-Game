@@ -53,13 +53,16 @@ document.onkeyup = function(event) {
 //  genera otro numero una vez ganas
  computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
  console.log(computerGuess)
- } else {
+} else {
   guessesLeft--;
   guessFar.push(userGuess);
-  if (guessesLeft === 0) {
-    reset();
- 
+  if(guessesLeft === 0)
+  {
+      reset();
+      losses++;
+      alert("YOU LOSE!");
   }
+  refresh();
  }
- refresh();
+
 }
